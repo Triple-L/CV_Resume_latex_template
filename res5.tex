@@ -1,0 +1,126 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\setlength{\textheight}{10.2in} % set text height big enough for box
+\topmargin=-.5in       % to start box .5in from top of page
+\oddsidemargin=-.5in   % to start box .5in from left of page
+    
+\begin{document}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxaroundhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=.5pt        %controls thickness of line 
+\boxaroundhmargin=35pt        % about a half inch
+\boxaroundvmargin=40pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=7.5in% \vsize=10.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\boxaround{ % put the text on the page inside a box  
+
+\name{MATTHEW M. PARKER\\[12pt]}
+\address{\bf Present Address\\2174 Seventh Street\\Troy, NY 12180\\
+        (518) 272-4460} 
+\address{\bf Permanent Address\\241 Park Avenue\\
+         New York, NY 01810\\ (212) 742-4937}
+
+ 
+\begin{resume}
+
+\section{\sl  Objective}  % with postscript font \sl produces bold italic
+%                           with default font (CM) \sl produces slanted type
+A  summer  position  in the field of Mechanical Engineering, with 
+emphasis on Automation/Robotics 
+ 
+\section{\sl  Education}
+Rensselaer Polytechnic Institute, B.S.,  Mechanical  Engineering, 
+expected December 1990 
+ 
+Bronx High School of Science, Graduated with Honors, June 1987 
+ 
+\section{\sl  Related Experience}
+\begin{ncolumn}{2}
+{\it Student Production Engineer}  &   5/89-12/89 
+\end{ncolumn}\\
+RCA - Missile and Surface Radar Division, Moorestown, NJ \\
+Involved  in  prototyping  and design of a vision guided robotics 
+workcell. Generated robotic workcell equipment planning diagrams, 
+software  specifications, and integration schematics. Using a CAD 
+system,  designed  end-effectors,  fixtures,  and  parts   trays. 
+Developed  communication  protocols between the vision system and 
+the robots, and  prototyped  software  to  control  the  assembly 
+process of the workcell, which in its entirety includes 2 robots, 
+vision  system,  conveyor  system,  tray  feeders,  and   various 
+sensors. 
+
+\begin{ncolumn}{2} 
+{\it Industrial Engineering Trainee} &  5/88-8/88 
+\end{ncolumn}\\
+Mattel Toys, Hawthorne, CA \\
+Analyzed  the  computing  needs  of  the  Industrial  Engineering 
+department,  interviewed  prospective  vendors,  evaluated  their 
+computer  hardware  and  software  products,  and recommended the 
+system  that  best  met  the  department's   requirements.   Also 
+developed  a software program to graphically systemize production 
+line flow charts and trained engineers and technicians to use the 
+various software. 
+
+\begin{ncolumn}{2}
+{\it Structural Engineering Trainee} & 5/87-8/87
+\end{ncolumn}\\  
+S.L.N. \& Associates, New York, NY \\
+Developed  user  friendly  software  programs  to  perform  Slope 
+Stability Analysis and  Retaining  Wall  Stability  Analysis  and 
+performed   on-site  inspections  to  monitor  the  stability  of 
+retaining walls. 
+ 
+\section{\sl  Other Experience}
+Pool Attendant, Bronx  High  School  of  Science  Swimming  Pool, 
+1985-87 
+
+\section{\sl  Honors}
+Dean's List of Distinguished Students \\
+National Honor Society 
+ 
+\section{\sl  Activities}
+Model United Nations Club \\
+Water Polo Club \\
+Rensselaer Christian Community \\
+Campus Life Committee \\
+Intramural Softball, Volleyball \\
+Other interests include: Squash, Sailing, Cycling, and Reading 
+
+
+\end{resume}
+
+\vfill} %    end the material being boxed.
+\end{document}
+
+
